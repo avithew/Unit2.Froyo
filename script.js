@@ -1,10 +1,10 @@
 const flavors = getFlavors();
 const flavorTable = getFlavorTable(flavors);
-console.log(flavorTable);
+printFlavorTable(flavorTable);
 
 //returns string array of flavors provided by user
 function getFlavors() {
-  return prompt("enter ur flavors").split(",");
+  return prompt("Enter your desired flavors").split(",");
 }
 
 //takes a string array of flavors
@@ -22,4 +22,10 @@ function getFlavorTable(flavors) {
   return flavorTable;
 }
 
-function printFlavorTable() {}
+//takes flavorTable object
+//prints out all flavors and corresponding amount to console
+function printFlavorTable(flavorTable) {
+  for (const flavor in flavorTable) {
+    console.log(flavor, flavorTable[flavor]);
+  }
+}
